@@ -19,7 +19,7 @@ module.exports = async (workingDir = process.cwd()) => {
     console.log('Aborting ...');
     process.exit(1);
   }
-  
+
   // use the basename of the current working directory if projectName wasn't supplied
   answers.projectName = answers.projectName || path.basename(workingDir);
 
