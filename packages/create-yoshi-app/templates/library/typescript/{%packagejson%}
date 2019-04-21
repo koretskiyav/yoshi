@@ -28,7 +28,7 @@
     "ts-jest": "^24.0.2",
     "typescript": "~3.0.1",
     "@types/jest": "^24.0.0",
-    "@types/node": "^8.0.0",
+    "@types/node": "^8.0.0"
   },
   "lint-staged": {
     "linters": {
