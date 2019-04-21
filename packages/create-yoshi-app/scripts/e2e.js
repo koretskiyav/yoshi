@@ -6,6 +6,7 @@ const flatMap = require('lodash/flatMap');
 const prompts = require('prompts');
 
 const { createApp, verifyRegistry } = require('../src/index');
+const getQuestions = require('../src/getQuestions');
 const TemplateModel = require('../src/TemplateModel');
 const { publishMonorepo } = require('../../../scripts/utils/publishMonorepo');
 const { testRegistry } = require('../../../scripts/utils/constants');
@@ -63,7 +64,11 @@ const testTemplate = mockedAnswers => {
     // If you nest a describe here (and the tests are run by mocha) the test cases
     // in the describe block will run first!
     it('should generate project successfully', async () => {
-      prompts.inject(mockedAnswers);
+      const questions = getQuestions();
+      const answers = questions.map(
+        question => mockedAnswers[question.name] || null,
+      );
+      prompts.inject(answers);
       verbose && console.log(chalk.cyan(testDirectory));
 
       // This sets the local registry as the NPM registry to use, so templates are installed from local registry
