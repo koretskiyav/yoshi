@@ -67,7 +67,7 @@ const prepareAssets = (optimizedStats, assetsDir) =>
     })
     .sort((a, b) => b.gzipSize - a.gzipSize);
 
-const printBuildResult = (assets, color) =>
+const printBuildResult = (assets, assetNameColor) =>
   assets.forEach(asset => {
     console.log(
       '  ' +
@@ -75,7 +75,9 @@ const printBuildResult = (assets, color) =>
         '  ' +
         `(${filesize(asset.gzipSize)} GZIP)` +
         '  ' +
-        `${chalk.dim(asset.folder + path.sep)}${chalk[color](asset.name)}`,
+        `${chalk.dim(asset.folder + path.sep)}${chalk[assetNameColor](
+          asset.name,
+        )}`,
     );
   });
 
