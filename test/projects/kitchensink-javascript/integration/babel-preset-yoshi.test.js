@@ -19,8 +19,8 @@ describe('entries', () => {
     expect(list['static-property']).toEqual('static-property');
     expect(list['static-function']).toEqual('static-function');
     expect(list['static-bound-function']).toEqual('static-bound-function');
-    expect(list['two-in-the-cube']).toEqual('8');
-    expect(list['async-double']).toEqual('6');
+    expect(list['exponential-operator']).toEqual('8');
+    expect(list['async-await-syntax']).toEqual('async/await syntax works!');
     expect(list['dynamic-import-named']).toEqual('named export');
     expect(list['dynamic-import-default']).toEqual('default export');
   });

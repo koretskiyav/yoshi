@@ -1,12 +1,12 @@
 // @babel/preset-env
 export const twoInTheCube = 2 ** 3;
 
-export const asyncDouble = async num => {
+export const asynAawaitFunc = async () => {
   await (() => {})();
-  return num * 2;
+  return 'async/await syntax works!';
 };
 
-//@babel/plugin-proposal-class-properties
+// @babel/plugin-proposal-class-properties
 
 export class TestClass {
   instanceProperty = 'instance property';
@@ -29,5 +29,7 @@ export class TestClass {
     return TestClass.staticProperty.replace('property', 'bound function');
   };
 }
+
+// @babel/plugin-syntax-dynamic-import
 
 export const dynamicImport = () => import('./dynamic-module');
